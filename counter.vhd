@@ -9,22 +9,21 @@ entity counter is
 end counter;
 
 architecture Behavioral of counter is
-signal temp : STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
+	signal temp : STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
 begin
-	counter_process : process(clk,reset,fucnt)
+	counter_process : process(clk,reset,funct)
 	begin
+		if reset'event and reset = '1' then
+			if funct = '0' then
+				temp <= "0000000000000000";
+			else
+				temp <= "1111111111111111";
+			end if;
+		end if;
 		if funct = '0' then
-			if reset = '1' then
-				temp <= (others =>0);
-			else
-				temp <= temp + '1';
-			end if;
-		else 
-			if reset = '1' then
-				temp <= (others =>1);
-			else
-				temp <= temp - '1';
-			end if;
+			temp <= temp + '1';
+		else
+			temp <= temp - '1';
 		end if;
 	end process;
 	output <= temp;
