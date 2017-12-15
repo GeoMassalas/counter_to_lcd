@@ -15,7 +15,7 @@ begin
 	begin
 		if clk50'event and clk50='1' then
 			i <= i+1;
-			if (i = 5000000) then  
+			if (i = 2500000) then  
 				temp <= not temp;
 				i <= 0;
 			end if;
