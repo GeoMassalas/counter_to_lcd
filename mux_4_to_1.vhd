@@ -1,6 +1,10 @@
+--
+-- Multiplexer build in order to select
+-- the frequency we need  through swithes 2 and 3
+-- and also pause the clock with switch 0
+--
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
 
 entity mux_4_to_1 is
 	port(sel : in STD_LOGIC_VECTOR(1 downto 0); -- sel(0)-switch2 / sel(1)-switch3

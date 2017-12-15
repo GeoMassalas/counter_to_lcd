@@ -1,3 +1,8 @@
+--
+-- Component takes as input the board's
+-- 50 Mhz clock and outputs 4 other clocks
+-- 1Hz , 10 Hz, 100 Hz, 1 Khz
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_unsigned.ALL;
@@ -8,13 +13,13 @@ entity freq_div is
 end freq_div;
 
 architecture Behavioral of freq_div is
-
+-- Frequency division component
 	component freq_div_u
 		generic (N:positive:=1);
 		port(clk50 : in STD_LOGIC;
 					clk : out STD_LOGIC);
 	end component;
-
+-- Signals
 	signal O : STD_LOGIC_VECTOR(3 downto 0);
 begin
 	FD0:	freq_div_u 

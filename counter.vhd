@@ -1,4 +1,8 @@
-
+--
+-- Counter Component increases when switch1 is
+-- low decreases when switch 1 is high and resets
+-- when the reset button is pressed
+--
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_unsigned.ALL;
@@ -9,6 +13,7 @@ entity counter is
 end counter;
 
 architecture Behavioral of counter is
+-- Signals
 	signal temp : STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
 begin
 	counter_process : process(clk,reset,funct)
