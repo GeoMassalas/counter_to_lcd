@@ -5,7 +5,7 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 
 entity divider is
 	port(input : in STD_LOGIC_VECTOR(15 downto 0);
-			d5,d1,d2,d3,d4 : out STD_LOGIC_VECTOR(3 downto 0));
+			d1,d2,d3,d4,d5 : out STD_LOGIC_VECTOR(3 downto 0));
 end divider;
 
 architecture Behavioral of divider is
@@ -13,8 +13,8 @@ architecture Behavioral of divider is
 	signal temp1,temp2,temp3,temp4,temp5 : integer;
 begin
 	div_process : process(input)
+	-- Variables
 	variable n0,n1,n2,n3 : integer;
-
 	begin
 		n0 := conv_integer(unsigned(input));
 		-- 1st digit
