@@ -37,4 +37,3 @@ begin
 		port map(input0 => temp0, input1 => temp1, input2 => temp2, input3 => temp3, output => output);
 
 end Behavioral;
-
