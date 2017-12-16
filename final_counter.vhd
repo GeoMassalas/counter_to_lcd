@@ -1,7 +1,5 @@
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
 
 entity final_counter is
 	port(clk50, reset : in STD_LOGIC;
@@ -24,6 +22,7 @@ end component;
 -- Signals
 signal main_clk : STD_LOGIC;
 signal cnt_num : STD_LOGIC_VECTOR(15 downto 0);
+
 begin
 	CLOCK : counter_clk
 		port map(clk50 => clk50, enable => SW(0), sel => SW(3 downto 2), clk => main_clk);
