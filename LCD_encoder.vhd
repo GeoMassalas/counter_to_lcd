@@ -20,13 +20,13 @@ architecture Behavioral of LCD_encoder is
 -- Line 2 Encoder Component
 	component line2_encoder
 		port( input : in STD_LOGIC_VECTOR(15 downto 0);
-			output : out STD_LOGIC_VECTOR(127 downto 0));
+			outp : out STD_LOGIC_VECTOR(127 downto 0));
 	end component;
 	
 begin
 	LE1: line1_encoder
 		port map(input => vector_in, output => line1);
 	LE2: line2_encoder
-		port map(input => vector_in, output => line2);
+		port map(input => vector_in, outp => line2);
 end Behavioral;
 
