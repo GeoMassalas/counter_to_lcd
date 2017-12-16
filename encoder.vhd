@@ -30,6 +30,7 @@ begin
 			X"43" when "1100", -- C
 			X"44" when "1101", -- D
 			X"45" when "1110", -- E
-			X"46" when "1111"; -- F
+			X"46" when "1111", -- F
+			X"2A" when others;
 end Behavioral;
 
