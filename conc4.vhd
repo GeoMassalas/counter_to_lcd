@@ -1,4 +1,7 @@
-
+--
+-- Concatonating the 4 8bit vectors to 128bit
+-- and adding X"20" which is the empty space to our LCD
+--
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_unsigned.ALL;
