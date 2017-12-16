@@ -15,6 +15,6 @@ end conc4;
 architecture Behavioral of conc4 is
 
 begin
-	output <= input0 & input1 & input2 & input3 & X"202020202020202020202020";
+	output <= input3 & input2 & input1 & input0 & X"202020202020202020202020";
 end Behavioral;
 
