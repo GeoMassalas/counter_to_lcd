@@ -13,15 +13,17 @@ architecture Behavioral of alt_divider is
 signal q : STD_LOGIC_VECTOR(3 downto 0);
 signal r : STD_LOGIC_VECTOR(15 downto 0);
 begin
-	div_process : process
+	div_process : process(divident)
 		variable n : integer;
 		variable temp : integer;
 	begin
 		temp := 0;
 		n := to_integer(unsigned(divident));
-		while n >= divisor loop
-			temp := temp + 1;
-			n := n - divisor;
+		for i in 0 to 9 loop
+			if n >= divisor then
+				temp := temp + 1;
+				n := n - divisor;
+			end if;
 		end loop;
 		q <= std_logic_vector(to_unsigned(temp, quotient'length));
 		r <= std_logic_vector(to_unsigned(n, remainder'length));
