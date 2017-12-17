@@ -18,12 +18,14 @@ architecture Behavioral of counter is
 begin
 	counter_process : process(clk,reset,funct)
 		begin
-			if clk'event and clk='1' and reset = '1' then
-				temp <= "0000000000000000";
-			elsif clk'event and clk='1' and funct = '0' then
-				temp <= temp + '1';
-			elsif clk'event and clk='1' and funct = '1' then
-				temp <= temp - '1';
+			if clk'event and clk='1' then
+				if reset = '1' then
+					temp <= "0000000000000000";
+				elsif funct = '0' then
+					temp <= temp + '1';
+				elsif funct = '1' then
+					temp <= temp - '1';
+				end if;
 			end if;
 		end process;
 	output <= temp;
