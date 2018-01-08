@@ -12,11 +12,11 @@ ARCHITECTURE behavior OF divider_tb IS
     COMPONENT divider
     PORT(
          input : IN  std_logic_vector(15 downto 0);
-         d5 : OUT  std_logic_vector(3 downto 0);
          d1 : OUT  std_logic_vector(3 downto 0);
          d2 : OUT  std_logic_vector(3 downto 0);
          d3 : OUT  std_logic_vector(3 downto 0);
-         d4 : OUT  std_logic_vector(3 downto 0)
+         d4 : OUT  std_logic_vector(3 downto 0);
+			d5 : OUT  std_logic_vector(3 downto 0)
         );
     END COMPONENT;
     
@@ -25,11 +25,11 @@ ARCHITECTURE behavior OF divider_tb IS
    signal input : std_logic_vector(15 downto 0) := (others => '0');
 
  	--Outputs
-   signal d5 : std_logic_vector(3 downto 0);
    signal d1 : std_logic_vector(3 downto 0);
    signal d2 : std_logic_vector(3 downto 0);
    signal d3 : std_logic_vector(3 downto 0);
    signal d4 : std_logic_vector(3 downto 0);
+	signal d5 : std_logic_vector(3 downto 0);
 
 	-- Clock 
    constant clk_period : time := 10 ns;
